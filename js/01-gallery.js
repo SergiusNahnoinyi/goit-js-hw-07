@@ -31,5 +31,8 @@ function onGalleryContainerClick(event) {
   if (!event.target.classList.contains('gallery__image')) {
     return;
   }
-  console.log(event.target.dataset.source);
+  const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+`);
+  instance.show();
 }
